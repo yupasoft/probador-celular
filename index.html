@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Probador de celular · Yupasoft</title>
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="theme-color" content="#0C1A2E">
+<script>try{if(localStorage.getItem("yp_tema")==="claro"){document.documentElement.setAttribute("data-tema","claro");document.querySelector('meta[name=theme-color]').content="#F4F7FA"}}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Marca Yupasoft: Tinta #0C1A2E, Turquesa #2ED3B7, Ámbar #F2A93B. Oscuro por defecto; claro solo si se elige con el botón. */
+:root{--acc:#2ED3B7;--acc-tx:#0C1A2E;--amb:#F2A93B;--bg:#0C1A2E;--card:#152741;--tx:#F4F7FA;--bd:#243B58;--mute:#9BB0C9}
+:root[data-tema="claro"]{--acc:#159C86;--acc-tx:#fff;--amb:#B26F0B;--bg:#F4F7FA;--card:#fff;--tx:#0C1A2E;--bd:#D9E2EC;--mute:#5A7086}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font:14px 'Sora',system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--tx);overflow:auto}
+.app{display:grid;grid-template-columns:220px 1fr 220px;gap:12px;min-height:100%;padding:12px;align-items:start}
+aside{position:sticky;top:12px;display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px}
+aside h3{margin:0 0 2px;font:500 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+aside input[type=text],aside select,aside button{width:100%;padding:9px 10px;border:1px solid var(--bd);border-radius:8px;background:transparent;color:var(--tx);font:inherit}
+aside input[type=text]{font:13px 'IBM Plex Mono',monospace}
+aside input[type=text]:focus,aside select:focus{outline:2px solid var(--acc);border-color:transparent}
+aside select{font-size:13px}
+aside select option{background:var(--card);color:var(--tx)}
+aside button{cursor:pointer;text-align:left}
+aside button:hover{border-color:var(--acc)}
+aside button.main{background:var(--acc);color:var(--acc-tx);border-color:var(--acc);text-align:center;font-weight:700}
+aside .sep{border-top:1px solid var(--bd);margin-top:4px;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.dim{color:var(--mute);font-size:12px;line-height:1.45}
+.stage{min-width:0;display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:flex-start}
+.dev{display:flex;flex-direction:column;align-items:center;gap:6px}
+.frame{background:#050c16;border-radius:38px;padding:14px 10px;box-shadow:0 10px 30px rgba(0,0,0,.4),0 0 0 1px var(--bd);position:relative}
+.frame::before{content:"";position:absolute;top:calc(6px*var(--z,1));left:50%;transform:translateX(-50%);width:calc(70px*var(--z,1));height:calc(5px*var(--z,1));border-radius:3px;background:#243B58}
+.screen{background:#fff;border-radius:24px;overflow:hidden}
+iframe{border:0;display:block;background:#fff;transform-origin:top left}
+.dev .dim{font-family:'IBM Plex Mono',monospace}
+@media (max-width:760px){.app{grid-template-columns:1fr}aside{position:static}}
+.marca{margin:0 0 6px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
+.marca svg{width:100%;max-width:170px;height:auto;display:block}
+.marca svg *{animation:none!important}
+:root[data-tema="claro"] .marca svg [stroke="#FFFFFF"]{stroke:#0C1A2E}
+.marca small{display:block;margin-top:8px;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--amb)}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="marca"><svg viewBox="0 0 718 101" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yupasoft"><style>
+.ycnv{transform-box:fill-box;transform-origin:center}
+.yvnv{opacity:.3}
+.yfnv{animation:ycnva 5.6s cubic-bezier(.3,1.4,.5,1) infinite both}
+.ywnv{animation:ywnva .7s cubic-bezier(.22,1,.36,1) .55s backwards}
+@keyframes ycnva{
+  0%  {opacity:.3;transform:scale(.78)}
+  7%  {opacity:1; transform:scale(1.1)}
+  12% {opacity:1; transform:scale(1)}
+  76% {opacity:1; transform:scale(1)}
+  88%,100% {opacity:.3;transform:scale(.78)}
+}
+@keyframes ywnva{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .yfnv,.ywnv{animation:none}
+}
+</style><rect class="ycnv yvnv" x="1.6" y="1.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycnv yvnv" x="1.6" y="28.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycnv yvnv" x="1.6" y="55.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycnv yfnv" x="0" y="81" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.000s"/><rect class="ycnv yvnv" x="28.6" y="1.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycnv yvnv" x="28.6" y="28.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycnv yfnv" x="27" y="54" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.120s"/><rect class="ycnv yfnv" x="27" y="81" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.060s"/><rect class="ycnv yvnv" x="55.6" y="1.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycnv yfnv" x="54" y="27" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.300s"/><rect class="ycnv yfnv" x="54" y="54" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.240s"/><rect class="ycnv yfnv" x="54" y="81" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.180s"/><rect class="ycnv yfnv" x="81" y="0" width="20" height="20" rx="5.5" fill="#F2A93B" style="animation-delay:0.540s"/><rect class="ycnv yfnv" x="81" y="27" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.480s"/><rect class="ycnv yfnv" x="81" y="54" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.420s"/><rect class="ycnv yfnv" x="81" y="81" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.360s"/><g class="ywnv"><defs><clipPath id="capnv"><rect x="-14" y="0" width="82" height="96"/></clipPath></defs>
+<g transform="translate(143,3)" clip-path="url(#capnv)"><path d="M0,0 L26,44 L52,0" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M26,44 L26,96" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(221,3)" clip-path="url(#capnv)"><path d="M0,0 L0,57 A26,30 0 0 0 52,57 L52,0" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(304,3)" clip-path="url(#capnv)"><path d="M0,96 L0,0 L20,0 A26,26 0 0 1 20,52 L0,52" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(374,3)" clip-path="url(#capnv)"><path d="M0,96 L26,0 L52,96" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M9,72 L43,72" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(445,3)" clip-path="url(#capnv)"><path d="M47,28.5 A21,19.5 0 1 0 26,48 A21,19.5 0 1 1 5,67.5" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(518,3)" clip-path="url(#capnv)"><path d="M2,48 A24,39 0 0 1 50,48 A24,39 0 0 1 2,48 Z" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(597,3)" clip-path="url(#capnv)"><path d="M0,96 L0,0 L46,0" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M0,48 L36,48" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(654,3)" clip-path="url(#capnv)"><path d="M0,9 L52,9" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M26,9 L26,96" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g></g></svg><small>Probador de celular</small></div>
+    <h3>Pantalla</h3>
+    <input type="text" id="url" placeholder="Pega el link (https://...)" autocomplete="off" spellcheck="false">
+    <button class="main" id="go">Cargar</button>
+    <button id="rel">↻ Recargar</button>
+    <h3 style="margin-top:8px">Modelo</h3>
+    <select id="disp"></select>
+    <div id="p2" class="sep" style="display:none">
+      <h3>Pantalla 2</h3>
+      <input type="text" id="url2" placeholder="Vacío = el mismo link" autocomplete="off" spellcheck="false">
+      <h3 style="margin-top:4px">Modelo 2</h3>
+      <select id="disp2"></select>
+    </div>
+    <div id="p3" class="sep" style="display:none">
+      <h3>Pantalla 3</h3>
+      <input type="text" id="url3" placeholder="Vacío = el mismo link" autocomplete="off" spellcheck="false">
+      <h3 style="margin-top:4px">Modelo 3</h3>
+      <select id="disp3"></select>
+    </div>
+  </aside>
+  <div class="stage" id="stage"></div>
+  <aside>
+    <h3>Vista</h3>
+    <button id="rot">⟲ Girar</button>
+    <select id="zoom">
+      <option value="fit">Zoom: ajustar</option>
+      <option value="2">Zoom 200%</option>
+      <option value="1.5">Zoom 150%</option>
+      <option value="1.25">Zoom 125%</option>
+      <option value="1">Zoom 100% (tamaño real)</option>
+      <option value="0.85">Zoom 85%</option>
+      <option value="0.7">Zoom 70%</option>
+      <option value="0.5">Zoom 50%</option>
+    </select>
+    <button id="mas">＋ Agregar pantalla</button>
+    <button id="menos" style="display:none">− Quitar pantalla</button>
+    <div class="dim" style="margin-top:8px">Si una página queda en blanco, ese sitio no permite verse aquí: ábrela en Chrome con F12 y Ctrl+Shift+M.</div>
+    <div class="sep">
+      <h3>Aplicación</h3>
+      <button class="main" id="inst">⬇ Instalar como app</button>
+      <div class="dim" id="instmsg" style="display:none"></div>
+      <button id="tema">☀ Tema claro</button>
+    </div>
+  </aside>
+</div>
+<script>
+var DEV=[["Android chico · 360×800",360,800],["iPhone 14 · 390×844",390,844],["Android grande · 412×915",412,915],["iPhone SE · 375×667",375,667],["Tablet · 768×1024",768,1024]];
+var $=function(i){return document.getElementById(i)};
+var disp=$("disp"),disp2=$("disp2"),disp3=$("disp3"),SEL=[disp,disp2,disp3],URL_=[$("url"),$("url2"),$("url3")],CLAVE=["ypc_url","ypc_url2","ypc_url3"],MAX=3,state={rot:false,n:1};
+DEV.forEach(function(d,i){SEL.forEach(function(sel){var o=document.createElement("option");o.value=i;o.textContent=d[0];sel.appendChild(o)})});
+disp.value=1;disp2.value=2;disp3.value=0;
+try{CLAVE.forEach(function(k,i){var s=localStorage.getItem(k);if(s)URL_[i].value=s})}catch(e){}
+function limpiar(u){u=(u||"").trim();if(u&&!/^[a-z][a-z0-9+.-]*:/i.test(u))u="https://"+u;return u}
+function dims(d){return state.rot?[d[2],d[1]]:[d[1],d[2]]}
+function zoomFor(ds){
+  var v=$("zoom").value;if(v!=="fit")return parseFloat(v);
+  var n=ds.length;
+  var availH=window.innerHeight-24-26;
+  var availW=$("stage").clientWidth-24*(n-1)-8;
+  var sw=0,mh=0;ds.forEach(function(d){var m=dims(d);sw+=m[0]+20;mh=Math.max(mh,m[1]+28)});
+  return Math.max(.3,Math.min(3,availH/mh,availW/sw));
+}
+function mk(d,url,z){
+  var m=dims(d),w=m[0],h=m[1];
+  var dev=document.createElement("div");dev.className="dev";
+  var fr=document.createElement("div");fr.className="frame";
+  fr.style.setProperty("--z",z);fr.style.padding=(14*z)+"px "+(10*z)+"px";fr.style.borderRadius=(38*z)+"px";
+  var sc=document.createElement("div");sc.className="screen";sc.style.borderRadius=(24*z)+"px";
+  sc.style.width=(w*z)+"px";sc.style.height=(h*z)+"px";
+  var f=document.createElement("iframe");f.style.width=w+"px";f.style.height=h+"px";
+  f.style.transform="scale("+z+")";
+  if(url)f.src=url;
+  sc.appendChild(f);fr.appendChild(sc);dev.appendChild(fr);
+  var c=document.createElement("div");c.className="dim";c.textContent=w+" × "+h+" px (celular) · vista al "+Math.round(z*100)+"%";dev.appendChild(c);
+  return dev;
+}
+function render(){
+  var st=$("stage");st.innerHTML="";
+  var u1=limpiar(URL_[0].value),ds=[],i;
+  for(i=0;i<state.n;i++)ds.push(DEV[SEL[i].value]);
+  var z=zoomFor(ds);
+  for(i=0;i<state.n;i++)st.appendChild(mk(ds[i],i?(limpiar(URL_[i].value)||u1):u1,z));
+  $("p2").style.display=state.n>1?"flex":"none";
+  $("p3").style.display=state.n>2?"flex":"none";
+  $("mas").style.display=state.n<MAX?"":"none";
+  $("menos").style.display=state.n>1?"":"none";
+}
+$("go").onclick=function(){try{CLAVE.forEach(function(k,i){localStorage.setItem(k,URL_[i].value)})}catch(e){}render()};
+URL_.forEach(function(el){el.onkeydown=function(e){if(e.key==="Enter")$("go").click()}});
+$("rot").onclick=function(){state.rot=!state.rot;render()};
+$("mas").onclick=function(){if(state.n<MAX){state.n++;render()}};
+$("menos").onclick=function(){if(state.n>1){state.n--;render()}};
+$("rel").onclick=render;
+SEL.forEach(function(s){s.onchange=render});$("zoom").onchange=render;
+
+/* Tema: oscuro por defecto; la elección se comparte con el portal y Yupavideo (clave yp_tema). */
+function pintarTema(){var c=document.documentElement.getAttribute("data-tema")==="claro";$("tema").textContent=c?"☾ Tema oscuro":"☀ Tema claro";var m=document.querySelector('meta[name=theme-color]');if(m)m.content=c?"#F4F7FA":"#0C1A2E"}
+$("tema").onclick=function(){var c=document.documentElement.getAttribute("data-tema")==="claro";if(c)document.documentElement.removeAttribute("data-tema");else document.documentElement.setAttribute("data-tema","claro");try{localStorage.setItem("yp_tema",c?"oscuro":"claro")}catch(e){}pintarTema()};
+pintarTema();
+
+/* Instalar como app (PWA). El botón se oculta si ya está instalada. */
+var aviso=null;
+function instalada(){return (window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches)||window.navigator.standalone===true}
+function ocultarInst(){$("inst").style.display="none";$("instmsg").style.display="none"}
+if(instalada())ocultarInst();
+window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();aviso=e});
+window.addEventListener("appinstalled",function(){aviso=null;ocultarInst()});
+$("inst").onclick=function(){
+  if(aviso){aviso.prompt();aviso.userChoice.then(function(){aviso=null});return}
+  var ua=navigator.userAgent,m=$("instmsg");
+  m.textContent=/iPhone|iPad|iPod/i.test(ua)?"En iPhone o iPad: abre esta página en Safari, toca Compartir y elige «Agregar a inicio».":"Abre el menú del navegador (⋮) y elige «Instalar» o «Agregar a pantalla de inicio». Si no aparece, usa Chrome o Edge.";
+  m.style.display="block";
+};
+
+if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
+var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(function(){render()},150)});
+render();
+</script>
+</body>
+</html>
