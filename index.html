@@ -42,6 +42,16 @@ aside .sep{border-top:1px solid var(--bd);margin-top:4px;padding-top:10px;displa
 iframe{border:0;display:block;background:#fff;transform-origin:top left}
 .dev .dim{font-family:'IBM Plex Mono',monospace}
 @media (max-width:760px){.app{grid-template-columns:1fr}aside{position:static}}
+.gate{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px}
+.gate .caja{width:min(420px,100%);background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:26px;text-align:center}
+.gate .marca{border:0;padding:0;margin:0 0 18px}.gate .marca svg{margin:0 auto;max-width:210px}
+.gate h2{margin:0 0 8px;font-size:18px}.gate p{margin:0 0 16px;color:var(--mute);line-height:1.5}
+.gate .bts{display:flex;flex-direction:column;gap:8px}
+.gate a,.gate button,aside a.bt{display:block;width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:8px;background:transparent;color:var(--tx);font:inherit;text-decoration:none;cursor:pointer;text-align:center}
+aside a.bt{text-align:left}
+.gate a:hover,.gate button:hover,aside a.bt:hover{border-color:var(--acc)}
+.gate .pri{background:var(--acc);color:var(--acc-tx);border-color:var(--acc);font-weight:700}
+[hidden]{display:none!important}
 .marca{margin:0 0 6px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
 .marca svg{width:100%;max-width:170px;height:auto;display:block}
 .marca svg *{animation:none!important}
@@ -50,7 +60,37 @@ iframe{border:0;display:block;background:#fff;transform-origin:top left}
 </style>
 </head>
 <body>
-<div class="app">
+<div class="gate" id="gate"><div class="caja">
+  <div class="marca"><svg viewBox="0 0 718 101" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yupasoft"><style>
+.ycng{transform-box:fill-box;transform-origin:center}
+.yvng{opacity:.3}
+.yfng{animation:ycnva 5.6s cubic-bezier(.3,1.4,.5,1) infinite both}
+.ywng{animation:ywnva .7s cubic-bezier(.22,1,.36,1) .55s backwards}
+@keyframes ycnva{
+  0%  {opacity:.3;transform:scale(.78)}
+  7%  {opacity:1; transform:scale(1.1)}
+  12% {opacity:1; transform:scale(1)}
+  76% {opacity:1; transform:scale(1)}
+  88%,100% {opacity:.3;transform:scale(.78)}
+}
+@keyframes ywnva{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .yfng,.ywng{animation:none}
+}
+</style><rect class="ycng yvng" x="1.6" y="1.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycng yvng" x="1.6" y="28.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycng yvng" x="1.6" y="55.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycng yfng" x="0" y="81" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.000s"/><rect class="ycng yvng" x="28.6" y="1.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycng yvng" x="28.6" y="28.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycng yfng" x="27" y="54" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.120s"/><rect class="ycng yfng" x="27" y="81" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.060s"/><rect class="ycng yvng" x="55.6" y="1.6" width="16.8" height="16.8" rx="4.5" fill="none" stroke="#FFFFFF" stroke-width="3.2"/><rect class="ycng yfng" x="54" y="27" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.300s"/><rect class="ycng yfng" x="54" y="54" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.240s"/><rect class="ycng yfng" x="54" y="81" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.180s"/><rect class="ycng yfng" x="81" y="0" width="20" height="20" rx="5.5" fill="#F2A93B" style="animation-delay:0.540s"/><rect class="ycng yfng" x="81" y="27" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.480s"/><rect class="ycng yfng" x="81" y="54" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.420s"/><rect class="ycng yfng" x="81" y="81" width="20" height="20" rx="5.5" fill="#2ED3B7" style="animation-delay:0.360s"/><g class="ywng"><defs><clipPath id="capng"><rect x="-14" y="0" width="82" height="96"/></clipPath></defs>
+<g transform="translate(143,3)" clip-path="url(#capng)"><path d="M0,0 L26,44 L52,0" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M26,44 L26,96" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(221,3)" clip-path="url(#capng)"><path d="M0,0 L0,57 A26,30 0 0 0 52,57 L52,0" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(304,3)" clip-path="url(#capng)"><path d="M0,96 L0,0 L20,0 A26,26 0 0 1 20,52 L0,52" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(374,3)" clip-path="url(#capng)"><path d="M0,96 L26,0 L52,96" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M9,72 L43,72" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(445,3)" clip-path="url(#capng)"><path d="M47,28.5 A21,19.5 0 1 0 26,48 A21,19.5 0 1 1 5,67.5" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(518,3)" clip-path="url(#capng)"><path d="M2,48 A24,39 0 0 1 50,48 A24,39 0 0 1 2,48 Z" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(597,3)" clip-path="url(#capng)"><path d="M0,96 L0,0 L46,0" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M0,48 L36,48" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g>
+<g transform="translate(654,3)" clip-path="url(#capng)"><path d="M0,9 L52,9" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M26,9 L26,96" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8"/></g></g></svg><small>Probador de celular</small></div>
+  <h2 id="gT">Comprobando tu cuenta…</h2>
+  <p id="gM">Un momento.</p>
+  <div class="bts" id="gB"></div>
+</div></div>
+<div class="app" id="app" hidden>
   <aside>
     <div class="marca"><svg viewBox="0 0 718 101" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yupasoft"><style>
 .ycnv{transform-box:fill-box;transform-origin:center}
@@ -118,6 +158,8 @@ iframe{border:0;display:block;background:#fff;transform-origin:top left}
       <button class="main" id="inst">⬇ Instalar como app</button>
       <div class="dim" id="instmsg" style="display:none"></div>
       <button id="tema">☀ Tema claro</button>
+      <a class="bt" href="../portal/?menu=1">← Mis herramientas</a>
+      <div class="dim" id="quien"></div>
     </div>
   </aside>
 </div>
@@ -191,8 +233,57 @@ $("inst").onclick=function(){
 };
 
 if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
-var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(function(){render()},150)});
-render();
+/* ---------- Ingreso: solo con cuenta del portal Yupasoft y con esta herramienta activa ----------
+   La sesión es la misma del portal y de Yupavideo (clave "yv_sesion", mismo dominio). */
+var SB_URL='https://ylwqztypjilecjwywawd.supabase.co',SB_KEY='sb_publishable_oHr1AqDbKi_lileKrmkhMg_4T6zYJ7E',ID='probador',PORTAL='../portal/',WSP='https://wa.me/51967292374';
+var COMO=new URLSearchParams(location.search).get('como'),listo=false,ses=null;
+try{ses=JSON.parse(localStorage.getItem('yv_sesion')||'null')}catch(e){ses=null}
+function guardarSes(s){ses=s;try{if(s)localStorage.setItem('yv_sesion',JSON.stringify(s));else localStorage.removeItem('yv_sesion')}catch(e){}}
+function pedir(ruta,cuerpo,conSes){
+  var h={'apikey':SB_KEY,'Content-Type':'application/json'};if(conSes&&ses)h.Authorization='Bearer '+ses.access_token;
+  return fetch(SB_URL+ruta,{method:'POST',headers:h,body:JSON.stringify(cuerpo||{})}).then(function(r){return r.text().then(function(x){
+    var d=null;try{d=x?JSON.parse(x):null}catch(e){}
+    if(!r.ok){var er=new Error((d&&(d.message||d.msg||d.error_description||d.error))||('Error '+r.status));er.status=r.status;throw er}
+    return d})});
+}
+function token(){
+  if(!ses||ses.expires_at-Date.now()/1000>90)return Promise.resolve();
+  return pedir('/auth/v1/token?grant_type=refresh_token',{refresh_token:ses.refresh_token},false).then(function(d){
+    guardarSes({access_token:d.access_token,refresh_token:d.refresh_token,expires_at:Date.now()/1000+d.expires_in});
+  },function(e){if(e.status>=400&&e.status<500){e.status=401}throw e});
+}
+function alPortal(){location.replace(PORTAL+'?volver='+ID)}
+function dispositivo(){var ua=navigator.userAgent||'';return (/Android|iPhone|iPad|iPod|Mobile/i.test(ua)||(navigator.maxTouchPoints>1&&/Macintosh/.test(ua)))?'celular':'computadora'}
+function avisar(titulo,msg,reintentar){
+  $("app").hidden=true;$("gate").hidden=false;$("gT").textContent=titulo;$("gM").textContent=msg;
+  var b=$("gB");b.innerHTML="";
+  if(reintentar){var r=document.createElement("button");r.className="pri";r.textContent="Reintentar";r.onclick=comprobar;b.appendChild(r)}
+  var a1=document.createElement("a");a1.href=PORTAL+"?menu=1";a1.textContent="Ir a mis herramientas";if(!reintentar)a1.className="pri";b.appendChild(a1);
+  var a2=document.createElement("a");a2.href=WSP;a2.target="_blank";a2.rel="noopener";a2.textContent="Escribir a Yupasoft por WhatsApp";b.appendChild(a2);
+}
+function entrar(P){
+  listo=true;$("gate").hidden=true;$("app").hidden=false;
+  var n=P.nombre||P.usuario||"",o=P.empresa?P.empresa.nombre:"Yupasoft";
+  $("quien").textContent=(P.como?"Viendo como: ":"")+(P.como?o:(n?n+" · "+o:o));
+  render();
+}
+function comprobar(){
+  if(!ses){alPortal();return}
+  $("gT").textContent="Comprobando tu cuenta…";$("gM").textContent="Un momento.";$("gB").innerHTML="";
+  token().then(function(){return pedir('/rest/v1/rpc/yp_mi_portal',COMO?{p_como:COMO}:{},true)}).then(function(P){
+    var h=(P.herramientas||[]).filter(function(x){return x.id===ID})[0],l=h&&h.licencia,adm=P.es_super&&!P.como;
+    if(!h||(!l&&!adm))return avisar("Tu cuenta no tiene esta herramienta","El Probador de celular no está activo en tu cuenta. Escríbenos y lo activamos.");
+    if(l&&!l.activa)return avisar("Herramienta inactiva","El Probador de celular está inactivo en tu cuenta. Escribe a Yupasoft.");
+    if(l&&!l.vigente)return avisar("Tu licencia venció","Escribe a Yupasoft para renovar el Probador de celular.");
+    if(l&&!adm&&l.dispositivos!=='todos'&&l.dispositivos!==dispositivo())return avisar(l.dispositivos==='computadora'?"Disponible solo en computadora":"Disponible solo en celular",l.dispositivos==='computadora'?"Ábrelo desde tu laptop o PC.":"Ábrelo desde tu teléfono.");
+    entrar(P);
+  }).catch(function(e){
+    if(e.status===401||e.status===403){guardarSes(null);alPortal();return}
+    avisar(e.status?"No se pudo comprobar tu cuenta":"Sin conexión",e.status?"Inténtalo de nuevo en un momento.":"Revisa tu internet e inténtalo de nuevo.",true);
+  });
+}
+var t;window.addEventListener("resize",function(){if(!listo)return;clearTimeout(t);t=setTimeout(function(){render()},150)});
+comprobar();
 </script>
 </body>
 </html>
