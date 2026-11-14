@@ -57,7 +57,18 @@ aside a.bt{text-align:left}
 .marca svg *{animation:none!important}
 :root[data-tema="claro"] .marca svg [stroke="#FFFFFF"]{stroke:#0C1A2E}
 .marca small{display:block;margin-top:8px;font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--amb)}
+/* Con el kit de diseño (portal/vivo.css) */
+.vv aside{background:color-mix(in srgb,var(--card) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.vv :is(aside button,aside a.bt,.gate a,.gate button,aside select,aside input){transition:transform .14s cubic-bezier(.2,.8,.2,1),box-shadow .2s,border-color .2s,background-color .2s}
+.vv :is(aside button,aside a.bt):not(:disabled):hover{transform:translateY(-1px)}
+.vv :is(aside button,aside a.bt):not(:disabled):active{transform:scale(.97)}
+.vv aside button.main{box-shadow:0 8px 20px -10px var(--acc)}
+.vv .dev{animation:vvSube .55s cubic-bezier(.2,.8,.2,1) both}
+.vv .dev:nth-child(2){animation-delay:.09s}.vv .dev:nth-child(3){animation-delay:.18s}
+.vv .frame{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.vv .frame:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(0,0,0,.5),0 0 0 1px var(--acc),0 0 46px -16px var(--acc)}
 </style>
+<link rel="stylesheet" href="../portal/vivo.css">
 </head>
 <body>
 <div class="gate" id="gate"><div class="caja">
@@ -163,6 +174,7 @@ aside a.bt{text-align:left}
     </div>
   </aside>
 </div>
+<script src="../portal/vivo.js"></script>
 <script>
 var DEV=[["Android chico · 360×800",360,800],["iPhone 14 · 390×844",390,844],["Android grande · 412×915",412,915],["iPhone SE · 375×667",375,667],["Tablet · 768×1024",768,1024]];
 var $=function(i){return document.getElementById(i)};
